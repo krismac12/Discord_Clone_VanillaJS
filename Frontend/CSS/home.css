@@ -1,0 +1,35 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+#top {
+    position: fixed;
+    top: 0;
+    left: 12%; /* Adjust the left percentage as needed */
+    width: 100%; /* Adjust the width percentage to account for the side bar */
+    height: 10%; /* Adjust the height percentage as needed */
+    background-color: #f2f2f2;
+    padding: 1%;
+    z-index: 2; /* Ensure the top bar is above the side bar */
+}
+  
+#sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10%; /* Adjust the width percentage as needed */
+    height: 100%; /* Adjust the height percentage to cover the full page */
+    background-color: #ddd;
+    padding: 1%;
+    z-index: 1; /* Ensure the side bar is below the top bar */
+}
+
+#main {
+    margin-top: 10%;
+    margin-left: 12%;
+    padding: 1%;
+}
+
+  
