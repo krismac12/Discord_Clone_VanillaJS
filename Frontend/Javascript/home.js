@@ -25,24 +25,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to update the chat list in the sidebar
     function updateChatList(chats) {
-        const ulElement = document.querySelector("#sideBar ul");
-        ulElement.innerHTML = ""; // Clear the existing chat list
-        
+        const chatsDiv = document.getElementById("chats");
+        chatsDiv.innerHTML = ""; // Clear the existing chat list
         chats.forEach((chat) => {
-            const listItem = document.createElement("li");
-            const link = document.createElement("a");
-            link.href = "./home.html";
-            link.textContent = chat;
-            link.id = chat;
-            link.className = "Chat";
-            listItem.appendChild(link);
-            ulElement.appendChild(listItem);
-            link.addEventListener("click", () => updateCurrentChat(chat));
-        });
+
+          const pattern = /^\b(\w)\w*\b\s+(\w)/;
+          var matches = chat.match(pattern);
+          if (matches) {
+            var firstLetter1 = matches[1];
+            var firstLetter2 = matches[2];
+            var word = firstLetter1 + firstLetter2;
+          } else {
+            var word = chat[0] + chat[1];
+          }
+
+          const button = document.createElement("button");
+          const br = document.createElement("br");
+          button.href = "./home.html";
+          button.textContent = word;
+          button.id = chat;
+          button.className = "Chat";
+          chatsDiv.appendChild(button);
+          chatsDiv.appendChild(br);
+
+            
+            button.addEventListener("click", () => updateCurrentChat(chat))
+          });
     }
 
     function updateCurrentChat(chat) {
         localStorage.setItem("currentChat", chat);
+        location.reload();
     }
 
     // Retrieve existing chats from local storage or initialize an empty array
