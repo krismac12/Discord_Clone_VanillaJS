@@ -7,7 +7,7 @@ body {
 #top {
     position: fixed;
     top: 0;
-    left: 12%; /* Adjust the left percentage as needed */
+    left: 15%; /* Adjust the left percentage as needed */
     width: 100%; /* Adjust the width percentage to account for the side bar */
     height: 10%; /* Adjust the height percentage as needed */
     background-color: #f2f2f2;
@@ -19,23 +19,63 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 10%; /* Adjust the width percentage as needed */
-    height: 100%; /* Adjust the height percentage to cover the full page */
-    background-color: #ddd;
-    padding: 1%;
+    height: 100%;
+    width: 15%; /* Adjust the width percentage as needed */
     z-index: 1; /* Ensure the side bar is below the top bar */
+    display: flex;
+
 }
+  
+#sideButtons {
+    top: 10;
+    width: 40%; /* Set to 30% of the width of the parent #sideBar */
+    height: 100%;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+}
+
+#channelsBar  {
+    width: 60%; /* Adjust the width percentage as needed */
+    height: 100%;
+    background-color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    text-align: center;
+}
+
+#channelsBar button {
+    margin-top: 5%; /* Apply margin to the buttons only */
+    width: 50px; /* Set the desired width for the buttons */
+    height: 50px; /* Set the desired height for the buttons */
+} 
+
+
+#sideButtons button {
+    margin-top: 5%; /* Apply margin to the buttons only */
+    width: 50px; /* Set the desired width for the buttons */
+    height: 50px; /* Set the desired height for the buttons */
+} 
 
 #main {
     margin-top: 10%;
-    margin-left: 12%;
+    margin-left: 15%;
     padding: 1%;
 }
 
 #messageInput{
     position: fixed;
     top: 90%;
-    width: 85%;
+    width: 75%;
     height: 5%;
 }
 
