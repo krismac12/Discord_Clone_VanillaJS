@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     emailDisplay.textContent = `Email: ${email}`;
 
     const addChatButton = document.getElementById("addChat");
+    const addChannelButton = document.getElementById("addChannel");
+
 
     const currentChat = localStorage.getItem("currentChat");
     const currentChannel = localStorage.getItem("currentChannel");
@@ -88,10 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Route to Chat form
     addChatButton.addEventListener("click", () => routeAddChat());
+    addChannelButton.addEventListener("click", () => routeAddChannel());
+
 
     function routeAddChat(){
         window.location.href = "AddChat.html";
     }
+
+    function routeAddChannel(){
+      window.location.href = "AddChannel.html";
+  }
 
     const messageInput = document.getElementById("messageInput");
 
@@ -105,12 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentChat === channel.chat) {
           const a = document.createElement("a");
           const br = document.createElement("br");
+          const br2 = document.createElement("br");
           a.href = "./home.html";
           a.textContent = channel.channelName;
           a.id = channel.channelName;
           a.className = "ChannelLink";
-          channelsDiv.appendChild(a);
           channelsDiv.appendChild(br);
+          channelsDiv.appendChild(br2);
+          channelsDiv.appendChild(a);
+
+
     
           a.addEventListener("click", () => updateCurrentChannel(channel));
         }
@@ -192,10 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // Append the updated messages to the container
       messagesContainer.appendChild(ulElement);
     }
-    
-        
-      // Display the messages initially
-      displayMessages();
+          
+    // Display the messages initially
+    displayMessages();
 
 
       
